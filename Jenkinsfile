@@ -13,6 +13,13 @@ pipeline {
                 }
             }
         }
+        stage('Deployment'){
+            stage('Deploy to staging'){
+                steps{
+                    sh "scp -i ~/.ssh/id_rsa.pub **/target/*.war shady@jenkins-master:/var/lib/tomcat8/webapps "
+                }
+            }
+        }
     }
     
 }
