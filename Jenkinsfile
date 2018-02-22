@@ -16,7 +16,7 @@ pipeline {
         
             stage('Deploy to staging'){
                 steps{
-                    sh "scp -i /home/shady/.ssh/id_rsa.pub **/target/*.war shady@jenkins-master:/var/lib/tomcat8/webapps "
+                    sh "scp -i /home/shady/.ssh/id_rsa.pub /var/lib/jenkins/workspace/PipelineAsCodeExample/webapp/target/*.war shady@jenkins-master:/var/lib/tomcat8/webapps "
                 }
             }
         
