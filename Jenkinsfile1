@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages{
+        stage('Step1'){
+            steps{
+                sh "echo 'Hello World!!!'"
+            }
+           
+        }
+        
+        stage('Step2'){
+                steps{
+                    sh " date > /tmp/jenkins_was_here"
+                }
+            }
+        
+    }
+
+    post {
+	failure {
+		mail to: 33shady@gmail.com, subject: 'The Pipeline failed :('
+	}
+    
+}
