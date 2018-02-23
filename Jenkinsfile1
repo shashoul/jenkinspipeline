@@ -19,7 +19,7 @@ pipeline {
 
     post {
 	failure {
-		mail to: 33shady@gmail.com, subject: 'The Pipeline failed :('
+		sh "echo 'Process faild!!'"
 	}
     
 }
