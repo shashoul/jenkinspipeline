@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    parameters{
+        string(name:"tomcat_dev",defaultValu:'jenkins-master',description:'Staging Server')
+        string(name:"tomcat_prod",defaultValu:'jenkins-master',description:'Production Server')
+    }
     stages{
         stage('Build'){
             steps{
@@ -16,7 +20,7 @@ pipeline {
         
             stage('Deploy to staging'){
                 steps{
-                    sh "scp -i /var/lib/jenkins/id_rsa.pub /var/lib/jenkins/workspace/PipelineAsCodeExample/webapp/target/*.war shady@jenkins-master:/var/lib/tomcat8/webapps "
+                    sh "scp -i /home/shady/.ssh/id_rsa.pub /var/lib/jenkins/workspace/PipelineAsCodeExample/webapp/target/*.war shady@${params.tomcat_dev}:/var/lib/tomcat8/webapps "
                 }
             }
         
