@@ -18,8 +18,8 @@ pipeline {
     }
 
     post {
-	failure {
-		sh "echo 'Process faild!!'"
-	}
-    
+	  failure {
+	    	sh "echo 'Process faild!!'"
+	    }
+    }
 }
