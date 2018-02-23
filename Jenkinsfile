@@ -21,7 +21,7 @@ pipeline {
         
             stage('Deploy to staging'){
                 steps{
-                    sh "scp  /var/lib/jenkins/workspace/PipelineAsCodeExample/webapp/target/*.war shady@jenkins-master:/var/lib/tomcat8/webapps "
+                    sh "scp **/target/*.war shady@${tomcat_dev}:/var/lib/tomcat8/webapps "
                 }
             }
         
