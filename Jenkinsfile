@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     parameters{
-        string(name:"tomcat_dev",defaultValu:'jenkins-master',description:'Staging Server')
-        string(name:"tomcat_prod",defaultValu:'jenkins-master',description:'Production Server')
+        string(name:"tomcat_dev",defaultValue:'jenkins-master',description:'Staging Server')
+        string(name:"tomcat_prod",defaultValue:'jenkins-master',description:'Production Server')
     }
     stages{
         stage('Build'){
