@@ -21,7 +21,7 @@ pipeline {
         
             stage('Deploy to staging'){
                 steps{
-                    sh "scp  **/target/*.war shady@${tomcat_dev}:/var/lib/tomcat8/webapps "
+                    sh "scp -i /home/shady/id_rsa **/target/*.war shady@${tomcat_dev}:/var/lib/tomcat8/webapps "
                 }
             }
         
