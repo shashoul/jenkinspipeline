@@ -14,7 +14,6 @@ pipeline {
                 success{
                     echo "Archiving..."
                     archiveArtifacts artifacts: '**/target/*.war'
-                    sh "echo '${JENKINS_HOME}'"
                 }
             }
         }
