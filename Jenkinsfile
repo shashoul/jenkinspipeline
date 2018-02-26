@@ -20,7 +20,7 @@ pipeline {
         
             stage('Deploy to staging'){
                 steps{
-                    sh "scp -i ${JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${tomcat_dev}:/var/lib/tomcat8/webapps "
+                    sh "scp -i ${JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${env.tomcat_dev}:/var/lib/tomcat8/webapps "
                 }
             }
         
