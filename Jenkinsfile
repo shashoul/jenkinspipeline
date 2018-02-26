@@ -3,7 +3,7 @@ pipeline {
 
     parameters{
         string(name:"tomcat_dev",defaultValue:'10.64.106.246',description:'Staging Server')
-        string(name:"tomcat_prod",defaultValue:'10.64.106.246',description:'Production Server')
+        string(name:"tomcat_prod",defaultValue:'10.64.107.249',description:'Production Server')
     }
     stages{
         stage('Build'){
