@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters{
-        string(name:"tomcat_dev",defaultValue:'jenkins-master',description:'Staging Server')
+        string(name:"tomcat_dev",defaultValue:'http://10.64.106.246',description:'Staging Server')
         string(name:"tomcat_prod",defaultValue:'jenkins-master',description:'Production Server')
     }
     stages{
