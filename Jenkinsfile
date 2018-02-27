@@ -24,13 +24,13 @@ pipeline {
 
                 stage('Deploy to Staging'){
                    steps{
-                            sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${env.tomcat_dev}:/var/lib/tomcat8/webapps "
+                            sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${params.tomcat_dev}:/var/lib/tomcat8/webapps "
                          }
                 }
 
                 stage('Deploy to Producation'){
                    steps{
-                            sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${env.tomcat_prod}:/var/lib/tomcat8/webapps "
+                            sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem **/target/*.war shady@${params.tomcat_prod}:/var/lib/tomcat8/webapps "
                          }
                 }
 
