@@ -18,6 +18,10 @@ pipeline {
         }
 
         stage('deployment'){
+
+            agent{
+                label 'master'
+            }
             steps{
               sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem ${env.JENKINS_HOME}/jobs/${env.JOBNAME}/lastSuccessful/archive/webapp/target/*.war shady@10.0.0.5:/var/lib/tomcat8/webapps "                     
               }
