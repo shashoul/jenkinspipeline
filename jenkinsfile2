@@ -22,6 +22,9 @@ pipeline {
             agent{
                 label 'master'
             }
+             options {
+                skipDefaultCheckout()
+            }
             steps{
               sh "scp -i ${env.JENKINS_HOME}/tomcat-demo.pem ${env.JENKINS_HOME}/jobs/${env.JOB_NAME}/lastSuccessful/archive/webapp/target/*.war shady@10.0.0.5:/var/lib/tomcat8/webapps "                     
               }
